@@ -20,6 +20,7 @@ Internal notes for contributors and agents. Use `README.md` as the public source
 ### Important files
 
 - `src/layout.ts` — core library; keep `layout()` fast and allocation-light
+- `src/bidi.ts` — Unicode Bidirectional Algorithm helper for the rich `prepareWithSegments()` path
 - `src/measure-harfbuzz.ts` — HarfBuzz backend kept for ad hoc measurement probes
 - `src/test-data.ts` — shared corpus for browser accuracy pages/checkers and benchmarks
 - `src/layout.test.ts` — small durable invariant tests for the exported prepare/layout APIs
