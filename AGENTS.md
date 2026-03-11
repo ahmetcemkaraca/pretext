@@ -1,6 +1,6 @@
 ## Pretext
 
-Internal notes for contributors and agents. Use `README.md` as the public source of truth for API examples and user-facing limitations. Use `STATUS.md` for the compact current browser-accuracy / benchmark snapshot, `corpora/STATUS.md` for the compact corpus snapshot, and `RESEARCH.md` for the detailed exploration log.
+Internal notes for contributors and agents. Use `README.md` as the public source of truth for API examples and user-facing limitations. Use `STATUS.md` for the compact current browser-accuracy / benchmark snapshot, `corpora/STATUS.md` for the compact corpus snapshot, `corpora/TAXONOMY.md` for the shared mismatch vocabulary, and `RESEARCH.md` for the detailed exploration log.
 
 ### Commands
 
@@ -20,6 +20,8 @@ Internal notes for contributors and agents. Use `README.md` as the public source
 ### Important files
 
 - `src/layout.ts` — core library; keep `layout()` fast and allocation-light
+- `src/analysis.ts` — normalization, segmentation, glue rules, and text-analysis phase for `prepare()`
+- `src/measurement.ts` — canvas measurement runtime, segment metrics cache, emoji correction, and engine-profile shims
 - `src/bidi.ts` — Unicode Bidirectional Algorithm helper for the rich `prepareWithSegments()` path
 - `src/measure-harfbuzz.ts` — HarfBuzz backend kept for ad hoc measurement probes
 - `src/test-data.ts` — shared corpus for browser accuracy pages/checkers and benchmarks
@@ -79,6 +81,7 @@ Internal notes for contributors and agents. Use `README.md` as the public source
 - A second Thai prose corpus (`นิทานเวตาล เรื่องที่ ๗`) is now checked in and exact at Chrome/Safari anchor widths plus a 9-sample Chrome sweep. Treat current Thai support as broader than one lucky story, but still verify new Thai text before declaring the whole script “done.”
 - Khmer anchor widths were exact in both Chrome and Safari, and a 9-sample Chrome sweep was exact. The full `step=10` sweep was slow enough to be annoying, so use `--samples=<n>` first unless you specifically need every width.
 - Japanese `羅生門` is now a checked-in canary. The first keep-worthy Japanese rule was semantic, not font-specific: kana iteration marks like `ゝ` / `ゞ` / `ヽ` / `ヾ` should be treated as CJK line-start-prohibited, even when `Intl.Segmenter` emits them as standalone word-like pieces.
+- A second Japanese prose corpus (`蜘蛛の糸`) is now checked in. It is exact at Chrome/Safari anchor widths, `8/9 exact` on the sampled Chrome sweep, and `56/61 exact` on Chrome `step=10`. Treat the recurring one-line positive field as a real Japanese edge-fit class, not source dirt.
 - The corpus diagnostics should derive our candidate lines from `layoutWithLines()`, not from a second local line-walker. That avoids SHY and future custom-break drift between the hot path and the diagnostic path.
 - Current line-fit tolerance is `0.005` for Chromium/Gecko and `1/64` for Safari/WebKit. That bump was justified by the remaining Arabic fine-width field and did not move the solved browser corpus or Gatsby coarse canary.
 

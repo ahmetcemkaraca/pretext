@@ -4,6 +4,16 @@ Everything we tried, measured, and learned while building this library.
 
 For the current compact browser-accuracy / benchmark snapshot, see `STATUS.md`.
 For the current compact corpus / sweep snapshot, see `corpora/STATUS.md`.
+For the shared mismatch vocabulary, see `corpora/TAXONOMY.md`.
+
+## Current steering summary
+
+This log is historical. The current practical steering picture is:
+
+- Japanese now has two real canaries (`羅生門`, `蜘蛛の糸`), both clean at anchor widths and both still exposing a small positive one-line field on broader Chrome sweeps.
+- Myanmar still has two real canaries with residual Chrome/Safari disagreement around quote/follower-style classes, so it remains the main unresolved Southeast Asian frontier.
+- Arabic coarse corpora are clean; the remaining work there is mostly a fine-width edge-fit class, not the old preprocessing/corpus-hygiene problems.
+- Mixed app text still matters because it catches product-shaped classes that books miss, especially soft-hyphen and extractor-sensitive cases.
 
 ## The problem: DOM measurement interleaving
 

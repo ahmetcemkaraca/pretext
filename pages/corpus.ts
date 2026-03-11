@@ -9,6 +9,7 @@ import arAlBukhala from '../corpora/ar-al-bukhala.txt' with { type: 'text' }
 import arRisalatAlGhufranPart1 from '../corpora/ar-risalat-al-ghufran-part-1.txt' with { type: 'text' }
 import heMasaotBinyaminMetudela from '../corpora/he-masaot-binyamin-metudela.txt' with { type: 'text' }
 import hiEidgah from '../corpora/hi-eidgah.txt' with { type: 'text' }
+import jaKumoNoIto from '../corpora/ja-kumo-no-ito.txt' with { type: 'text' }
 import jaRashomon from '../corpora/ja-rashomon.txt' with { type: 'text' }
 import kmPrachumReuangPrengKhmerVolume7Stories1To10 from '../corpora/km-prachum-reuang-preng-khmer-volume-7-stories-1-10.txt' with { type: 'text' }
 import myBadDeedsReturnToYouTeacher from '../corpora/my-bad-deeds-return-to-you-teacher.txt' with { type: 'text' }
@@ -877,6 +878,8 @@ async function loadText(meta: CorpusMeta): Promise<string> {
       return heMasaotBinyaminMetudela
     case 'hi-eidgah':
       return hiEidgah
+    case 'ja-kumo-no-ito':
+      return jaKumoNoIto
     case 'ja-rashomon':
       return jaRashomon
     case 'km-prachum-reuang-preng-khmer-volume-7-stories-1-10':

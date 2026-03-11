@@ -36,6 +36,24 @@
     "notes": "Japanese prose stress corpus from Wikisource, trimmed to the story body with ruby readings and page/license scaffolding removed."
   },
   {
+    "id": "ja-kumo-no-ito",
+    "language": "ja",
+    "direction": "ltr",
+    "title": "蜘蛛の糸",
+    "source_url": "https://ja.wikisource.org/wiki/%E8%9C%98%E8%9B%9B%E3%81%AE%E7%B3%B8",
+    "output": "corpora/ja-kumo-no-ito.txt",
+    "font_family": "\"Hiragino Mincho ProN\", \"Yu Mincho\", \"Noto Serif CJK JP\", serif",
+    "font_size_px": 20,
+    "line_height_px": 32,
+    "default_width": 600,
+    "min_width": 300,
+    "max_width": 900,
+    "characters": 2885,
+    "lines": 17,
+    "acquired_via": "parse",
+    "notes": "Second Japanese prose stress corpus from Wikisource, trimmed to the story body with ruby fallout and public-domain/license scaffolding removed."
+  },
+  {
     "id": "ko-unsu-joh-eun-nal",
     "language": "ko",
     "direction": "ltr",

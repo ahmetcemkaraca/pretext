@@ -3,7 +3,8 @@
 Current sweep snapshot for the checked-in canaries.
 
 This is the compact status page. Historical reasoning, failed experiments, and
-why the numbers moved live in `RESEARCH.md`.
+why the numbers moved live in `RESEARCH.md`. The shared mismatch vocabulary now
+lives in `TAXONOMY.md`.
 
 Conventions:
 - "anchors" means `300 / 600 / 800` unless noted otherwise
@@ -29,6 +30,7 @@ Conventions:
 
 | Corpus | Language | Chrome anchors | Safari anchors | Chrome sampled | Chrome step=10 | Notes |
 |---|---|---:|---:|---:|---:|---|
+| `ja-kumo-no-ito` | Japanese | exact | exact | `8/9 exact` | `56/61 exact` | second Japanese canary; same broad one-line positive edge-fit field as `羅生門`, but smaller |
 | `ja-rashomon` | Japanese | exact | exact | `4/9 exact` | `54/61 exact` | real Japanese canary; remaining field is mostly opening-quote / punctuation compression plus a few one-line edge fits |
 | `ko-unsu-joh-eun-nal` | Korean | exact | not recently rerun | n/a | `61/61 exact` | Korean coarse corpus is clean |
 | `th-nithan-vetal-story-1` | Thai | exact at key sentinels after fixes | not recently rerun | n/a | `59/61 exact` | two remaining coarse one-line misses |
@@ -56,6 +58,7 @@ These are sampled, not exhaustive.
 
 | Corpus | Status | Notes |
 |---|---|---|
+| `ja-kumo-no-ito` | sampled matrix has a small field | `Hiragino Mincho ProN` had `+32px` at `450px`; `Hiragino Sans` was `5/5 exact` |
 | `ja-rashomon` | sampled matrix has small field | `Hiragino Mincho ProN` was `3/5 exact`; `Hiragino Sans` improved to `4/5 exact`, but `450px` still missed |
 | `ko-unsu-joh-eun-nal` | clean on sampled matrix | `Apple SD Gothic Neo`, `AppleMyungjo` |
 | `th-nithan-vetal-story-1` | clean on sampled matrix | `Thonburi`, `Ayuthaya` |
@@ -73,7 +76,9 @@ Useful commands:
 
 ```sh
 bun run corpus-check --id=ko-unsu-joh-eun-nal 300 600 800
+bun run corpus-check --id=ja-kumo-no-ito 300 600 800
 bun run corpus-check --id=ja-rashomon 300 600 800
+bun run corpus-sweep --id=ja-kumo-no-ito --start=300 --end=900 --step=10
 bun run corpus-sweep --id=ja-rashomon --start=300 --end=900 --step=10
 bun run corpus-sweep --id=my-cunning-heron-teacher --start=300 --end=900 --step=10
 bun run corpus-sweep --id=my-bad-deeds-return-to-you-teacher --samples=9

@@ -19,6 +19,12 @@ Current bundle:
   - URL: <https://ja.wikisource.org/wiki/%E7%BE%85%E7%94%9F%E9%96%80>
   - Acquisition: Wikisource `parse` API, trimmed to the story body with ruby readings and page/license scaffolding removed
 
+- `ja-kumo-no-ito.txt`
+  - Language: Japanese
+  - Source: 芥川龍之介, `蜘蛛の糸`
+  - URL: <https://ja.wikisource.org/wiki/%E8%9C%98%E8%9B%9B%E3%81%AE%E7%B3%B8>
+  - Acquisition: Wikisource `parse` API, trimmed to the story body with ruby fallout and public-domain/license scaffolding removed
+
 - `ko-unsu-joh-eun-nal.txt`
   - Language: Korean
   - Source: Hyun Jin-geon, `운수 좋은 날`
@@ -82,6 +88,7 @@ Current bundle:
 Machine-readable metadata lives in `sources.json`.
 
 Current sweep status lives in `STATUS.md`.
+Mismatch taxonomy and steering vocabulary live in `TAXONOMY.md`.
 
 Useful commands:
 

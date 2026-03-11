@@ -28,23 +28,24 @@ Latest local `bun run benchmark-check` snapshot on this machine:
 
 | Metric | Value |
 |---|---|
-| `prepare()` | `17.50ms` |
+| `prepare()` | `16.65ms` |
 | `layout()` | `0.10ms` |
-| DOM batch | `3.90ms` |
-| DOM interleaved | `42.55ms` |
+| DOM batch | `3.60ms` |
+| DOM interleaved | `41.80ms` |
 
 ### Long-form corpus stress
 
 | Corpus | analyze() | measure() | prepare() | layout() | segs (analyze→prepared) | lines @ 300px |
 |---|---:|---:|---:|---:|---:|---:|
-| Japanese prose | `3.50ms` | `9.60ms` | `13.00ms` | `0.04ms` | `3,606→5,052` | `380` |
-| Korean prose | `2.10ms` | `9.90ms` | `12.00ms` | `0.05ms` | `5,282→9,691` | `428` |
-| Thai prose | `7.50ms` | `8.30ms` | `17.30ms` | `0.06ms` | `10,281→10,281` | `1,024` |
+| Japanese prose (story 2) | `1.90ms` | `4.30ms` | `6.50ms` | `0.02ms` | `1,773→2,670` | `193` |
+| Japanese prose | `8.40ms` | `9.20ms` | `17.30ms` | `0.04ms` | `3,606→5,052` | `380` |
+| Korean prose | `4.70ms` | `9.20ms` | `16.00ms` | `0.05ms` | `5,282→9,691` | `428` |
+| Thai prose | `10.90ms` | `8.70ms` | `19.20ms` | `0.06ms` | `10,281→10,281` | `1,024` |
 | Myanmar prose | `0.60ms` | `1.40ms` | `2.00ms` | `<0.01ms` | `797→797` | `81` |
-| Myanmar prose (story 2) | `0.40ms` | `1.10ms` | `1.60ms` | `<0.01ms` | `498→498` | `54` |
-| Khmer prose | `5.10ms` | `5.70ms` | `11.20ms` | `0.06ms` | `11,109→11,109` | `591` |
-| Hindi prose | `3.80ms` | `10.10ms` | `13.80ms` | `0.05ms` | `9,958→9,958` | `653` |
-| Arabic prose | `17.50ms` | `62.70ms` | `99.00ms` | `0.19ms` | `37,603→37,603` | `2,643` |
+| Myanmar prose (story 2) | `0.40ms` | `1.10ms` | `1.50ms` | `<0.01ms` | `498→498` | `54` |
+| Khmer prose | `5.20ms` | `5.90ms` | `13.80ms` | `0.06ms` | `11,109→11,109` | `591` |
+| Hindi prose | `4.80ms` | `10.90ms` | `15.80ms` | `0.05ms` | `9,958→9,958` | `653` |
+| Arabic prose | `28.10ms` | `61.00ms` | `93.40ms` | `0.19ms` | `37,603→37,603` | `2,643` |
 
 Notes:
 - These are current Chrome-side numbers from `bun run benchmark-check`, not the older cross-browser raw snapshot in `pages/benchmark-results.txt`.
